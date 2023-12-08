@@ -17,7 +17,7 @@
 }
 
 body {
-    background: #000000;
+    background: #0d0c0d;
     width: 100%;
     color: #FFFFFF;
 }
@@ -145,7 +145,7 @@ body main article section.search {
     padding: 15px;
     border: 1px solid #544E4E;
     border-radius: 8px;
-    background: #000000;
+    background: #111011;
     margin-bottom: 20px;
     box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.5);
     display: flex;
@@ -181,7 +181,7 @@ body main article section.content div.command {
     padding: 20px;
     padding-right: 160px;
     width: calc(100% - 21px - 161px);
-    background: #000000;
+    background: #111011;
     border: 1px solid #544E4E;
     border-radius: 10px;
     margin-bottom: 20px;
@@ -219,7 +219,7 @@ body main article section.content div.command header p {
     color: #a9a6a6;
 }
 
-body main article section.content div.command p.usage {
+body main article section.content div.command p.description {
     font-size: 16px;
     font-weight: 400;
     color: #a9a6a6;

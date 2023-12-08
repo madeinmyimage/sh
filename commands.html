@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="cdn/css/main.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#2b2d31" />
+    <meta name="keywords" content="kayo, discord, bot" />
+    <meta name="author" content="wnm210" />
+    <meta name="og:title" content="kayo / commands" />
+    <meta name="og:description" content="discord bot..." />
+    <meta property="og:url" content="/" />
+    <link rel="shortcut icon"
+        href="https://media.discordapp.net/attachments/1075599671919116389/1182498778989744128/kayo.png?ex=6584eace&is=657275ce&hm=4b0a9980f3b423ab103b8a34e77be27ce19f08748cd52afe6ec4bb36272717b7&=&format=webp&quality=lossless&width=452&height=446" />
+    <meta property="og:image"
+        content="https://media.discordapp.net/attachments/1075599671919116389/1182498778989744128/kayo.png?ex=6584eace&is=657275ce&hm=4b0a9980f3b423ab103b8a34e77be27ce19f08748cd52afe6ec4bb36272717b7&=&format=webp&quality=lossless&width=452&height=446" />
+    <meta property="og:site_name" content="kayo.sh" />
+</head>
+
+<body>
+    <main>
+        <aside>
+            <section class="profile">
+                <h1>Commands</h1>
+            </section>
+            <ul class="modules">
+                <li class="button active" onclick="SelectModule('All')"><span>All</span></li>
+                <h1>Modules</h1>
+                <li class="button" onclick="SelectModule('Configuration')"><span>Configuration</span></li>
+                <li class="button" onclick="SelectModule('Information')"><span>Information</span></li>
+                <li class="button" onclick="SelectModule('Last.fm Integration')"><span>Last.fm Integration</span></li>
+                <li class="button" onclick="SelectModule('Media')"><span>Media</span></li>
+                <li class="button" onclick="SelectModule('Miscellaneous')"><span>Miscellaneous</span></li>
+                <li class="button" onclick="SelectModule('Moderation')"><span>Moderation</span></li>
+            </ul>
+
+        </aside>
+        <article>
+            <section class="search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" fill="currentColor">
+                    <path
+                        d="M 13 3 C 7.4889971 3 3 7.4889971 3 13 C 3 18.511003 7.4889971 23 13 23 C 15.396508 23 17.597385 22.148986 19.322266 20.736328 L 25.292969 26.707031 A 1.0001 1.0001 0 1 0 26.707031 25.292969 L 20.736328 19.322266 C 22.148986 17.597385 23 15.396508 23 13 C 23 7.4889971 18.511003 3 13 3 z M 13 5 C 17.430123 5 21 8.5698774 21 13 C 21 17.430123 17.430123 21 13 21 C 8.5698774 21 5 17.430123 5 13 C 5 8.5698774 8.5698774 5 13 5 z">
+                    </path>
+                </svg>
+                <input id="search" name="search" onkeyup="Search()" placeholder="Search" type="text" />
+            </section>
+            <section class="content">
+
+                <div class="command" id="command">
+                    <header>
+                        <h1>autorole</h1>
+                        <p>Create automatic roles for new members</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>autorole remove</h1>
+                        <p>Remove an auto role from the server</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>autorole create</h1>
+                        <p>Add an auto role to the server</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>autorole reset</h1>
+                        <p>Removes all auto roles</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>autorole list</h1>
+                        <p>View all auto roles</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>gallery</h1>
+                        <p>Restrict channels to only allow images</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>gallery add</h1>
+                        <p>Add a gallery channel</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>gallery clear</h1>
+                        <p>Reset all gallery channels</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>gallery list</h1>
+                        <p>View all gallery channels</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>gallery remove</h1>
+                        <p>Remove a gallery channel</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>goodbye</h1>
+                        <p>Set up goodbye messages</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>goodbye add</h1>
+                        <p>Add a goodbye message to a channel</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>goodbye list</h1>
+                        <p>Show all goodbye messages</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>goodbye remove</h1>
+                        <p>Remove a goodbye message from a channel</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>goodbye reset</h1>
+                        <p>Remove all goodbye messages</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>goodbye view</h1>
+                        <p>Show the goodbye message for a channel</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>prefix</h1>
+                        <p>Show the command prefix</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>prefix set</h1>
+                        <p>Set the command prefix</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>reaction</h1>
+                        <p>Create reaction triggers for messages</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>reaction list</h1>
+                        <p>Removes all reaction trigers</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>reaction create</h1>
+                        <p>Create a reaction trigger with a response</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>reaction remove</h1>
+                        <p>Removes a reaction trigger in the server</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>reaction reset</h1>
+                        <p>Remove all reaction triggers</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>reaction list</h1>
+                        <p>View all reaction triggers</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>response</h1>
+                        <p>Create automatic responses for trigger messages</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>response remove</h1>
+                        <p>Remove an auto response from the server</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>response create</h1>
+                        <p>Create an auto response with a trigger</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>response reset</h1>
+                        <p>Removes all auto responses</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>response list</h1>
+                        <p>View all auto responses</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>voicemaster</h1>
+                        <p>Create temporary voice channels</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>voicemaster claim</h1>
+                        <p>Claim an invactive voice channel</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>voicemaster ghost</h1>
+                        <p>Hide your voice channel</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>voicemaster limit</h1>
+                        <p>Set a member limit to your voice channel</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>voicemaster lock</h1>
+                        <p>Lock your voice channel</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>voicemaster name</h1>
+                        <p>Rename your voice channel</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>voicemaster permit</h1>
+                        <p>Permit a member access to join your voice channel</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>voicemaster reset</h1>
+                        <p>Reset the VoiceMaster channel</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>voicemaster setup</h1>
+                        <p>Setup the VoiceMaster channel</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>voicemaster unghost</h1>
+                        <p>Unhide your voice channel</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>voicemaster unlock</h1>
+                        <p>Unlock your voice channel</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>voicemaster reject</h1>
+                        <p>Reject a member from joining your voice channel</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>voicemaster configuration</h1>
+                        <p>See current configuration for current Voice Channel</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>welcome</h1>
+                        <p>Set up welcome messages</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>welcome add</h1>
+                        <p>Add a welcome message to a channel</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>welcome list</h1>
+                        <p>Show all welcome messages</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>welcome remove</h1>
+                        <p>Remove a welcome message from a channel</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>welcome reset</h1>
+                        <p>Remove all welcome messages</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>welcome view</h1>
+                        <p>Show the welcome message for a channel</p>
+                    </header>
+                    <div class="badge">Configuration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>about</h1>
+                        <p>Show system information about the bot</p>
+                    </header>
+                    <div class="badge">Information</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>avatar</h1>
+                        <p>Get any Discord user profile avatar</p>
+                    </header>
+                    <div class="badge">Information</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>banner</h1>
+                        <p>Get any Discord user profile banner</p>
+                    </header>
+                    <div class="badge">Information</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>invite</h1>
+                        <p>Get an invite link for the bot</p>
+                    </header>
+                    <div class="badge">Information</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>joined</h1>
+                        <p>View when you or a member joined the server</p>
+                    </header>
+                    <div class="badge">Information</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>serverbanner</h1>
+                        <p>View server banner</p>
+                    </header>
+                    <div class="badge">Information</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>servericon</h1>
+                        <p>View server icon</p>
+                    </header>
+                    <div class="badge">Information</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>serverinfo</h1>
+                        <p>View information about a server</p>
+                    </header>
+                    <div class="badge">Information</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>timezone</h1>
+                        <p>View a member's timezone</p>
+                    </header>
+                    <div class="badge">Information</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>timezone set</h1>
+                        <p>Set your timezone</p>
+                    </header>
+                    <div class="badge">Information</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>timezone list</h1>
+                        <p>View all member timezones</p>
+                    </header>
+                    <div class="badge">Information</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>urbandictionary</h1>
+                        <p>Search for definitions on Urban Dictionary</p>
+                    </header>
+                    <div class="badge">Information</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>userinfo</h1>
+                        <p>View information about a member or yourself</p>
+                    </header>
+                    <div class="badge">Information</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>valorant</h1>
+                        <p>Get information on a Valorant player</p>
+                    </header>
+                    <div class="badge">Information</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>wolframalpha</h1>
+                        <p>Search a query on Wolfram Alpha</p>
+                    </header>
+                    <div class="badge">Information</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>nowplaying</h1>
+                        <p>Search a query on Wolfram Alpha</p>
+                    </header>
+                    <div class="badge">Last.fm Integration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>lastfm</h1>
+                        <p>All commands to interact with the Last.fm website</p>
+                    </header>
+                    <div class="badge">Last.fm Integration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>lastfm set</h1>
+                        <p>Set your Last.fm username</p>
+                    </header>
+                    <div class="badge">Last.fm Integration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>lastfm update</h1>
+                        <p>Index your Last.fm library</p>
+                    </header>
+                    <div class="badge">Last.fm Integration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>lastfm mode</h1>
+                        <p>Set a custom Now Playing embed</p>
+                    </header>
+                    <div class="badge">Last.fm Integration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>lastfm reactions</h1>
+                        <p>Set custom Now Playing reactions</p>
+                    </header>
+                    <div class="badge">Last.fm Integration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>lastfm whoknows</h1>
+                        <p>Show the top listeners for an artist</p>
+                    </header>
+                    <div class="badge">Last.fm Integration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>lastfm wkalbum</h1>
+                        <p>Show the top listeners for an album</p>
+                    </header>
+                    <div class="badge">Last.fm Integration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>lastfm wktrack</h1>
+                        <p>Show the top listeners for a track</p>
+                    </header>
+                    <div class="badge">Last.fm Integration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>lastfm globalwhoknows</h1>
+                        <p>Show the top global listeners for an artist</p>
+                    </header>
+                    <div class="badge">Last.fm Integration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>lastfm globalwkalbum</h1>
+                        <p>Show the top global listeners for an album</p>
+                    </header>
+                    <div class="badge">Last.fm Integration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>lastfm recent</h1>
+                        <p>View recently played Last.fm tracks</p>
+                    </header>
+                    <div class="badge">Last.fm Integration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>lastfm globalwktrack</h1>
+                        <p>Show the top global listeners for a track</p>
+                    </header>
+                    <div class="badge">Last.fm Integration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>lastfm topartists</h1>
+                        <p>Show the top artists of yourself or someone else</p>
+                    </header>
+                    <div class="badge">Last.fm Integration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>lastfm topalbums</h1>
+                        <p>Show the top albums of yourself or someone else</p>
+                    </header>
+                    <div class="badge">Last.fm Integration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>lastfm toptracks</h1>
+                        <p>Show the top tracks of yourself or someone else</p>
+                    </header>
+                    <div class="badge">Last.fm Integration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>lastfm plays</h1>
+                        <p>Show your plays for an artist</p>
+                    </header>
+                    <div class="badge">Last.fm Integration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>lastfm playsalbum</h1>
+                        <p>Show your plays for an album</p>
+                    </header>
+                    <div class="badge">Last.fm Integration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>lastfm playstrack</h1>
+                        <p>Show your plays for a track</p>
+                    </header>
+                    <div class="badge">Last.fm Integration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>lastfm compare</h1>
+                        <p>Compare your top artists with another member</p>
+                    </header>
+                    <div class="badge">Last.fm Integration</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>instagram</h1>
+                        <p>Get information about an Instagram account</p>
+                    </header>
+                    <div class="badge">Media</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>roblox</h1>
+                        <p>View roblox player information</p>
+                    </header>
+                    <div class="badge">Media</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>tiktok</h1>
+                        <p>Get information on a TikTok profile</p>
+                    </header>
+                    <div class="badge">Media</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>tiktok download</h1>
+                        <p>Download videos from a TikTok profile</p>
+                    </header>
+                    <div class="badge">Media</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>youtube</h1>
+                        <p>Search YouTube for video results</p>
+                    </header>
+                    <div class="badge">Media</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>youtube add</h1>
+                        <p>Add a channel to receive video alerts</p>
+                    </header>
+                    <div class="badge">Media</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>youtube clear</h1>
+                        <p>Remove all YouTube alerts</p>
+                    </header>
+                    <div class="badge">Media</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>youtube list</h1>
+                        <p>View all YouTube alerts</p>
+                    </header>
+                    <div class="badge">Media</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>youtube remove</h1>
+                        <p>Remove a channel from receiving video alerts</p>
+                    </header>
+                    <div class="badge">Media</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>afk</h1>
+                        <p>Set an AFK status</p>
+                    </header>
+                    <div class="badge">Miscellaneous</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>avatarhistory</h1>
+                        <p>View a user's previous avatars</p>
+                    </header>
+                    <div class="badge">Miscellaneous</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>copyembed</h1>
+                        <p>Copy an existing embeds code for creating an embed</p>
+                    </header>
+                    <div class="badge">Miscellaneous</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>editembed</h1>
+                        <p>Snipe the last edited message</p>
+                    </header>
+                    <div class="badge">Miscellaneous</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>embed</h1>
+                        <p>Send an embed</p>
+                    </header>
+                    <div class="badge">Miscellaneous</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>fortnite</h1>
+                        <p>Fortnite cosmetic-related commands</p>
+                    </header>
+                    <div class="badge">Miscellaneous</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>fortnite lookup</h1>
+                        <p>Search for a cosmetic with occurences</p>
+                    </header>
+                    <div class="badge">Miscellaneous</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>fortnite shop</h1>
+                        <p>Get the current Fortnite item shop</p>
+                    </header>
+                    <div class="badge">Miscellaneous</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>fyp</h1>
+                        <p>Get a random video from Tiktok's for you page</p>
+                    </header>
+                    <div class="badge">Miscellaneous</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>help</h1>
+                        <p>Show information about a command</p>
+                    </header>
+                    <div class="badge">Miscellaneous</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>image</h1>
+                        <p>Search Google images</p>
+                    </header>
+                    <div class="badge">Miscellaneous</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>itunes</h1>
+                        <p>Search for a song on iTunes</p>
+                    </header>
+                    <div class="badge">Miscellaneous</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>lyrics</h1>
+                        <p>Get lyrics to a song</p>
+                    </header>
+                    <div class="badge">Miscellaneous</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>namehistory</h1>
+                        <p>View a user's previous names</p>
+                    </header>
+                    <div class="badge">Miscellaneous</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>ocr</h1>
+                        <p>Detects text in an image</p>
+                    </header>
+                    <div class="badge">Miscellaneous</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>randomcolor</h1>
+                        <p>Get a random hex code</p>
+                    </header>
+                    <div class="badge">Miscellaneous</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>snipe</h1>
+                        <p>Snipe the last deleted message</p>
+                    </header>
+                    <div class="badge">Miscellaneous</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>soundcloud</h1>
+                        <p>Search a query on SoundCloud</p>
+                    </header>
+                    <div class="badge">Miscellaneous</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>translate</h1>
+                        <p>Translate text to another language</p>
+                    </header>
+                    <div class="badge">Miscellaneous</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>ban</h1>
+                        <p>Ban a user from the server</p>
+                    </header>
+                    <div class="badge">Moderation</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>cleanup</h1>
+                        <p>Clean up my bot messages</p>
+                    </header>
+                    <div class="badge">Moderation</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>emoji</h1>
+                        <p>Enlarge an emoji</p>
+                    </header>
+                    <div class="badge">Moderation</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>emoji add</h1>
+                        <p>Add an emoji to the server</p>
+                    </header>
+                    <div class="badge">Moderation</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>emoji addmany</h1>
+                        <p>Bulk add emojis to the server</p>
+                    </header>
+                    <div class="badge">Moderation</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>emoji list</h1>
+                        <p>View all emojis in the server</p>
+                    </header>
+                    <div class="badge">Moderation</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>emoji remove</h1>
+                        <p>Remove an emoji from the server</p>
+                    </header>
+                    <div class="badge">Moderation</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>emoji remove duplicates</h1>
+                        <p>Sort and remove duplicate emojis</p>
+                    </header>
+                    <div class="badge">Moderation</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>emoji rename</h1>
+                        <p>Rename an emoji in the server</p>
+                    </header>
+                    <div class="badge">Moderation</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>kick</h1>
+                        <p>Kick a user from the server</p>
+                    </header>
+                    <div class="badge">Moderation</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>lockdown</h1>
+                        <p>Prevent members from sending messages</p>
+                    </header>
+                    <div class="badge">Moderation</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>mute</h1>
+                        <p>Mute a member</p>
+                    </header>
+                    <div class="badge">Moderation</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>nickname</h1>
+                        <p>Set user a new nickname in the server</p>
+                    </header>
+                    <div class="badge">Moderation</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>purge</h1>
+                        <p>Remove messages which meet a criteria</p>
+                    </header>
+                    <div class="badge">Moderation</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>revokefiles</h1>
+                        <p>Removes/assigns the permission to attach files & embed links in the current channel</p>
+                    </header>
+                    <div class="badge">Moderation</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>revokefiles off</h1>
+                        <p>Disables permissions to attach files & embed links in a channel</p>
+                    </header>
+                    <div class="badge">Moderation</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>revokefiles on</h1>
+                        <p>Enables permissions to attach files & embed links in a channel</p>
+                    </header>
+                    <div class="badge">Moderation</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>role</h1>
+                        <p>Add or remove a role from a member</p>
+                    </header>
+                    <div class="badge">Moderation</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>role add</h1>
+                        <p>Add a role to a member</p>
+                    </header>
+                    <div class="badge">Moderation</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>role color</h1>
+                        <p>Change the color of a role</p>
+                    </header>
+                    <div class="badge">Moderation</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>role create</h1>
+                        <p>Create a role with a hex color</p>
+                    </header>
+                    <div class="badge">Moderation</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>role delete</h1>
+                        <p>Delete a role</p>
+                    </header>
+                    <div class="badge">Moderation</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>role edit</h1>
+                        <p>Change the name of a role</p>
+                    </header>
+                    <div class="badge">Moderation</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>role icon</h1>
+                        <p>Change a role's icon</p>
+                    </header>
+                    <div class="badge">Moderation</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>role remove</h1>
+                        <p>Remove a role from a member</p>
+                    </header>
+                    <div class="badge">Moderation</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>unban</h1>
+                        <p>Unban a user from the server</p>
+                    </header>
+                    <div class="badge">Moderation</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>unlock</h1>
+                        <p>Allow members to send messages</p>
+                    </header>
+                    <div class="badge">Moderation</div>
+                </div>
+                <div class="command" id="command">
+                    <header>
+                        <h1>unmute</h1>
+                        <p>Unmute a member</p>
+                    </header>
+                    <div class="badge">Moderation</div>
+                </div>
+
+            </section>
+            <script>
+                function SelectModule(Module) {
+                    if (Module === 'All') {
+                        var li
+
+                        li = document.getElementsByClassName('command');
+
+                        for (i = 0; i < li.length; i++) {
+                            li[i].style.display = 'block';
+                        }
+                    } else {
+                        var elements = document.getElementsByClassName('command'),
+                            a, txtValue
+
+                        for (var i = 0; i < elements.length; i++) {
+                            a = elements[i].getElementsByClassName('badge')[0]
+
+                            txtValue = a.innerText;
+
+                            console.log(txtValue)
+                            if (elements[i].style.display === 'none') {
+                                if (txtValue === Module) {
+                                    elements[i].style.display = 'block';
+                                }
+                            } else {
+                                if (txtValue === Module) {
+                                    continue;
+                                }
+                                elements[i].style.display = 'none';
+                            }
+                        }
+                    }
+                }
+
+                function Search() {
+                    var input, filter, ul, li, a, i, txtValue;
+                    input = document.getElementById('search');
+                    filter = input.value.toUpperCase();
+                    li = document.getElementsByClassName('command');
+
+                    for (i = 0; i < li.length; i++) {
+                        a = li[i].getElementsByClassName('description')[0];
+                        txtValue = a.textContent || a.innerText;
+
+                        if (txtValue.toUpperCase().indexOf(filter) !== -1) {
+                            li[i].style.display = '';
+                        } else {
+                            li[i].style.display = 'none';
+                        }
+                    }
+                }
+            </script>
+        </article>
+    </main>
+</body>
+
+</html>
