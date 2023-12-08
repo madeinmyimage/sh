@@ -1,0 +1,238 @@
+/*
+ * Copyright 2022 (c) wnm210. All rights reserved.
+ * This file is licensed under the GNU Affero General Public License v3.0 license found in the LICENSE 
+ * file in the root directory of this source tree.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap')
+
+$primary: #191A1B
+$secondary: #000000
+$border: #544E4E
+$color: #FFFFFF
+$colorSe: #a9a6a6
+
+*
+    user-select: none
+    -webkit-user-select: none
+    -moz-user-select: none
+    -ms-user-select: none
+    font-family: 'Lato', sans-serif
+    margin: 0
+    padding: 0
+    border: 0
+    outline: 0
+
+body
+    background: $primary
+    width: 100%
+    color: $color
+    & main
+        padding: 70px
+        width: calc( 100% - 70px * 2 )
+        height: calc( 100vh - 70px * 2 )
+        display: flex
+        & aside
+            margin-right: 10px
+            max-width: 300px
+            width: calc( 100% - 20px * 2 )
+            height: calc( 100% - 40px * 2 )
+            background: $secondary
+            border: 1px solid $border
+            border-radius: 10px
+            padding: 40px
+            box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.5)
+            & section.profile
+                display: flex
+                flex-direction: row
+                align-items: center
+                & img
+                    width: 70px
+                    height: 70px
+                    border-radius: 50%
+                    margin-right: 20px
+                & h1
+                    font-size: 30px
+                    font-weight: 700
+                    margin: 0
+            & ul.modules
+                list-style: none
+                margin: 0
+                margin-top: 40px
+                padding: 0
+                & h1
+                    font-size: 14px
+                    font-weight: 700
+                    text-transform: uppercase
+                    margin: 0
+                    margin-top: 20px
+                    color: $colorSe
+                & a
+                    color: $color
+                    text-decoration: none
+                & li
+                    color: $color
+                    font-size: 18px
+                    font-weight: 300
+                    cursor: pointer
+                    width: fit-content
+                    margin: 1.5px 0
+                    &:hover
+                        text-decoration: underline
+            & ul.links
+                list-style: none
+                margin: 0
+                margin-top: 40px
+                padding: 0
+                & h1
+                    font-size: 14px
+                    font-weight: 700
+                    text-transform: uppercase
+                    margin: 0
+                    margin-top: 20px
+                    color: $colorSe
+                & a
+                    color: $color
+                    text-decoration: none
+                & li
+                    color: $color
+                    font-size: 18px
+                    font-weight: 300
+                    width: fit-content
+                    cursor: pointer
+                    margin: 1.5px 0
+                    &:hover
+                        text-decoration: underline
+        & article
+            margin-left: 10px
+            width: 100%
+            height: calc( 100vh - 70px * 2 )
+            overflow-y: auto
+            display: flex
+            flex-direction: column
+            align-items: center
+            position: relative
+            & section.search
+                max-width: 400px
+                width: calc( 100% - 16px * 2 )
+                padding: 15px
+                border: 1px solid $border
+                border-radius: 8px
+                background: $secondary
+                margin-bottom: 20px
+                box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.5)
+                display: flex
+                align-items: center
+                flex-direction: row
+                & svg
+                    width: 20px
+                    color: $colorSe
+                    height: 20px
+                & input
+                    width: 100%
+                    border: 0
+                    outline: 0
+                    background: transparent
+                    color: $color
+                    margin-left: 12px
+                    &::placeholder
+                        color: $colorSe
+            & section.content
+                width: 100%
+                max-width: 1000px
+                & div.command
+                    padding: 20px
+                    padding-right: 160px
+                    width: calc( 100% - 21px - 161px )
+                    background: $secondary
+                    border: 1px solid $border
+                    border-radius: 10px
+                    margin-bottom: 20px
+                    box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.5)
+                    display: flex
+                    flex-direction: column
+                    position: relative
+                    transition-duration: .2s
+                    &:hover
+                        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0)
+                        cursor: pointer
+                    & header
+                        display: flex
+                        flex-direction: row
+                        align-items: center
+                        & h1
+                            font-size: 20px
+                            font-weight: 700
+                            margin: 0
+                            margin-bottom: 10px
+                        & p
+                            font-size: 16px
+                            font-weight: 400
+                            margin: 0
+                            margin-left: 10px
+                            margin-bottom: 10px
+                            color: $colorSe
+                    & p.usage
+                        font-size: 16px
+                        font-weight: 400
+                        color: $colorSe
+                    & div.badge
+                        min-width: 50px
+                        font-size: 14px
+                        font-weight: 700
+                        height: 20px
+                        padding: 5px
+                        border-radius: 20px
+                        text-align: center
+                        position: absolute
+                        top: 20px
+                        right: 20px
+                        background: $border
+                        color: $color
+
+::-webkit-scrollbar
+    width: 0px
+
+@media screen and (max-width: 1120px)
+    body
+        overflow-y: auto
+        overflow-x: hidden
+        height: 100vh
+        & main
+            flex-direction: column
+            overflow-y: auto
+            overflow-x: hidden
+            height: max-content
+            & aside
+                max-width: calc( 100% - 40px * 2 )
+                margin-left: 0
+                margin-bottom: 20px
+            & article
+                margin-left: 0
+                max-width: 100%
+                height: max-content
+                & section.content
+                    width: 100%
+                    max-width: 100%
+
+@media screen and (max-width: 600px)
+    body
+        main
+            width: calc( 100% - 40px * 2 )
+            height: calc( 100vh - 40px * 2 )
+            padding: 40px
+            & article
+                & section.content
+                    & div.command
+                        & header
+                            flex-direction: column
+                            align-items: flex-start
+                            & p
+                                margin-left: 0
+
+@media screen and (max-width: 350px)
+    body
+        main
+            width: calc( 100% - 20px * 2 )
+            height: calc( 100vh - 20px * 2 )
+            padding: 20px
